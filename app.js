@@ -8,7 +8,7 @@ var express = require('express')
     , request = require('request');
 
 //SET APP_RELATIVE_PATH to a folder where your app's index.html resides.
- var APP_RELATIVE_PATH = path.join(__dirname, '/../AngularForce/');
+ var APP_RELATIVE_PATH = path.join(__dirname, '/../AngularSFBootstrap/');
  console.log(APP_RELATIVE_PATH);
    
 
@@ -50,7 +50,7 @@ app.all('/proxy/?*', function (req, res) {
     }).pipe(res);
 });
 
-function log() {
+function log(req) {
     console.log("req.headers[\"authorization\"] = " + req.headers["authorization"]);
     console.log("req.headers[\"salesforceproxy-endpoint\"] = " + req.headers["salesforceproxy-endpoint"]);
     console.log('req.method = ' + req.method);
